@@ -10,9 +10,10 @@ def sort_dheap(arr, d) -> list:
         heap.swap(0, n)
         heap.sift_down(0, n)
         n -= 1
-    arr = [None] * len(heap)
-    for i in range(len(heap)):
-        arr[i] = heap.get_heap()[i]
+    # arr = [None] * len(heap)
+    # for i in range(len(heap)):
+    #     arr[i] = heap.get_heap()[i]
+    arr = heap.get_heap()
     return arr
 
 
@@ -85,24 +86,28 @@ def sort_merge(arr, left, right, k) -> list:
     return arr
 
 def main():
-    def random_arr_dheap():
-        arr = []
-        for i in range(10):
-            arr.append(rd.randint(1, 10))
-        return sort_dheap(arr, 3)
-    for i in range(5):
-        print(random_arr_dheap())
+    # def random_arr_dheap():
+    #     arr = []
+    #     for i in range(10):
+    #         arr.append(rd.randint(1, 10))
+    #     return sort_dheap(arr, 3)
+    # for i in range(5):
+    #     print(random_arr_dheap())
     
-    print("=" * 40)
+    # print("=" * 40)
 
-    def random_arr_merge():
-        arr = []
-        for i in range(10):
-            arr.append(rd.randint(1, 10))
-        sort_merge(arr, 0, len(arr)-1, 4)
-        return arr
-    for i in range(5):
-        print(random_arr_merge())
+    # def random_arr_merge():
+    #     arr = []
+    #     for i in range(10):
+    #         arr.append(rd.randint(1, 10))
+    #     sort_merge(arr, 0, len(arr)-1, 4)
+    #     return arr
+    # for i in range(5):
+    #     print(random_arr_merge())
+    arr = [i for i in range(1, 10)]
+    arr[::-1]
+    arr = sort_dheap(arr, 3)
+    print(arr)
 
 
 if __name__ == "__main__":

@@ -42,11 +42,18 @@ def main():
     end_time = time.time()
     runtime = end_time - start_time
     print(f"\nВремя сортировки 3-кучей = {runtime:.4f} с")
+    
     start_time = time.time()
     arr2 = sort_merge(arr2, 0, length - 1, 4)
     end_time = time.time()
     runtime = end_time - start_time
     print(f"Время сортировки 4-слиянием = {runtime:.4f} с")
+
+    start_time = time.time()
+    arr1.sort()
+    end_time = time.time()
+    runtime = end_time - start_time
+    print(f"\nВремя сортировки sort() = {runtime:.4f} с")
 
 
 if __name__ == "__main__":
